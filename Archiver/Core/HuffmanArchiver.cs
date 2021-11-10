@@ -8,12 +8,13 @@ namespace Archiver.Core
 {
     internal class HuffmanArchiver : IArchiver
     {
-        public readonly Encoding Encoding;
+        public readonly Encoding Encoding = new UTF8Encoding(false);
 
-        public HuffmanArchiver()
+        public HuffmanArchiver() {}
+
+        public HuffmanArchiver(Encoding encoding)
         {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Encoding = Encoding.UTF8;
+            Encoding = encoding;
         }
 
         public void Compress(string inputFile, string outputFile)

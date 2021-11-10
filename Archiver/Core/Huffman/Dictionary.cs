@@ -24,7 +24,7 @@ namespace Archiver.Core.Huffman
                 var pair = line.Split("~");
                 var key = pair[0];
 
-                char realKey = key switch
+                var realKey = key switch
                 {
                     "sn" => '\n',
                     "sr" => '\r',
